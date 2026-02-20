@@ -57,4 +57,4 @@ You must supply your own legally obtained copy of MUSHA.
 
 ❤️ **Credits**
 
-Reverse engineering, hardware testing, and implementation performed through collaborative debugging and real hardware validation.
+Reverse engineering, hardware testing, and implementation performed through collaborative debugging and real hardware validation. Thanks to Fern for help with testing!
