@@ -36,17 +36,12 @@ BlueRetro Bluetooth adapter
 
 This patch:
 
-Redirects the controller read routine to a code cave.
+Fixes unintended button presses while using BlueRetro and other wireless adapters during gameplay.
 
-Preserves the original input handling logic.
+- Disables the ability to pause while holding A, B, or C, resolving the unintended pause behaviour introduced when using certain wireless controllers.
+- Adds a safeguard so that if the game detects A + B + C + Start simultaneously (an input state that appears to occur intermittently due to high polling rate interactions with wireless adapters), the input is suppressed.    This prevents phantom button presses that can otherwise trigger unintended behaviour such as formation changes via the A button.
 
-Conditionally filters the Start "new press" bit when A/B/C are held.
-
-Returns execution cleanly to the original flow.
-
-Maintains original timing behaviour.
-
-No gameplay logic, physics, or audio routines are modified.
+**Flash Cartridge Note**: If using flash cartridges such as EverDrive that provide an in-game menu hotkey, it is recommended to configure the menu combination to include a directional input (for example: A + B + C + Down). While this patch suppresses phantom input states within the game logic, flash cartridges that monitor controller input independently (e.g., via V-blank polling) may still detect transient input spikes at the hardware level.
 
 ---
 
