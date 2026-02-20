@@ -1,16 +1,16 @@
-
-🎯 **Target ROM**
+🎯 Target ROM
 
 This patch is designed for:
 
 MUSHA (USA)
 SHA-1: 821eea5d357f26710a4e2430a2f349a80df5f2f6
 
-Always verify your SHA-1 before applying.
+Always verify your ROM’s SHA-1 before applying the patch.
+It will not work correctly with other regions or modified dumps.
 
 ---
 
-🔧 **How to Apply**
+🔧 How to Apply
 
 Obtain a clean MUSHA (USA) ROM matching the SHA-1 above.
 
@@ -18,43 +18,47 @@ Use an IPS patching tool (e.g. Lunar IPS).
 
 Apply the patch to the clean ROM.
 
----
-
-🧪 **Tested On**
-
-- Real Sega Mega Drive hardware
-
-- EverDrive flash cartridge
-
-- BlueRetro Bluetooth adapter
+Run the patched ROM on emulator or real hardware.
 
 ---
 
-⚙ **Technical Overview**
+🧪 Tested On
 
-The patch:
+Original Sega Mega Drive hardware
+
+EverDrive flash cartridge
+
+BlueRetro Bluetooth adapter
+
+---
+
+⚙ Technical Overview
+
+This patch:
 
 Redirects the controller read routine to a code cave.
 
-Preserves original input handling.
+Preserves the original input handling logic.
 
-Filters the Start "new press" bit conditionally based on A/B/C state.
+Conditionally filters the Start "new press" bit when A/B/C are held.
 
 Returns execution cleanly to the original flow.
 
-Maintains original timing characteristics.
+Maintains original timing behaviour.
 
-No gameplay logic is modified.
+No gameplay logic, physics, or audio routines are modified.
 
 ---
 
-📜 **Disclaimer**
+📜 Disclaimer
 
 This patch is provided for preservation and hardware compatibility purposes.
 You must supply your own legally obtained copy of MUSHA.
 
 ---
 
-❤️ **Credits**
+❤️ Credits
 
-Reverse engineering, hardware testing, and implementation performed through collaborative debugging and real hardware validation. Thanks to Fern for help with testing!
+Reverse engineering, hardware testing, and implementation performed through collaborative debugging and real hardware validation.
+
+Special thanks to Fern for guidance and debugging support.
